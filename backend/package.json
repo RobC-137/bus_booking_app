@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "npx knex migrate:latest",
+    "rollback": "npx knex migrate:rollback"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "knex": "^0.21.5",
+    "pg": "^8.3.3"
+  }
+}
