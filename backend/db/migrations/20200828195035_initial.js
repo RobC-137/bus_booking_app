@@ -19,7 +19,7 @@ exports.up = async function (knex) {
 
     })
 
-    await knex.schema.createTable(tableNames.bus_models, (table) => {
+    await knex.schema.createTable(tableNames.buses_models, (table) => {
         table.increments().notNullable();
         table.string('manufacturer');
         table.integer('seats').notNullable();
@@ -35,5 +35,5 @@ exports.up = async function (knex) {
 exports.down = async function (knex) {
     await knex.schema.dropTableIfExists(tableNames.stops);
     await knex.schema.dropTableIfExists(tableNames.routes);
-    await knex.schema.dropTableIfExists(tableNames.bus_models);
+    await knex.schema.dropTableIfExists(tableNames.buses_models);
 };
