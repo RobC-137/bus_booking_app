@@ -12,9 +12,9 @@ exports.seed = async (knex) => {
   )
 
   const created = await knex(tableNames.stops).insert([
-    { id: 1, name: 'valparaíso', city: 'valparaíso' },
-    { id: 2, name: 'pajaritos', city: 'santiago' },
-    { id: 3, name: 'estación central', city: 'santiago' }
+    { name: 'valparaíso', city: 'valparaíso' },
+    { name: 'pajaritos', city: 'santiago' },
+    { name: 'estación central', city: 'santiago' }
   ]).returning('*');
 
   console.log(created);
