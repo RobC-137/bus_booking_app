@@ -24,4 +24,10 @@ app.use((error, req, res, next) => {
     errorHandler(error, res);
 });
 
+
 app.listen(port, () => console.log(`Example app listening on port port! ${port}`))
+
+
+
+
+module.exports = app;
