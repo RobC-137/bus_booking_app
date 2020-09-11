@@ -7,5 +7,6 @@ module.exports = [
     tableNames.book_seats,
     tableNames.routes,
     tableNames.routes_stops,
-    tableNames.stops
+    tableNames.stops,
+    tableNames.cities
 ]

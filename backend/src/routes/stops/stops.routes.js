@@ -25,13 +25,11 @@ router.post('/', async (req, res, next) => {
 
 router.patch('/:id', async (req, res, next) => {
     const { id } = req.params;
-    const props = req;
-
-    console.log(body);
+    const properties = req;
 
     try {
-        if (utils.objectIsEmpty(props)) throw new Error('No id or body')
-        await queries.patchStop(id, props);
+        if (utils.objectIsEmpty(properties)) throw new Error('No id or body')
+        await queries.patchStop(id, properties);
         res.send('patched')
     } catch (error) {
         next(error)

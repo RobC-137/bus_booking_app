@@ -5,13 +5,12 @@ const Knex = require('knex');
  * @param {Knex} knex 
  */
 exports.up = async function (knex) {
-    await knex.schema.createTable(tableNames.stops, (table) => {
+
+    await knex.schema.createTable(tableNames.cities, (table) => {
         table.increments().notNullable();
-        table.string('city').notNullable();
         table.string('name').notNullable();
-
-
     });
+
 
     await knex.schema.createTable(tableNames.routes, (table) => {
         table.increments().notNullable();
@@ -33,7 +32,7 @@ exports.up = async function (knex) {
  * @param {Knex} knex 
  */
 exports.down = async function (knex) {
-    await knex.schema.dropTableIfExists(tableNames.stops);
+    await knex.schema.dropTableIfExists(tableNames.cities);
     await knex.schema.dropTableIfExists(tableNames.routes);
     await knex.schema.dropTableIfExists(tableNames.buses_models);
 };

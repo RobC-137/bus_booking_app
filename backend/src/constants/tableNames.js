@@ -1,4 +1,5 @@
 module.exports = {
+    cities: 'cities',
     buses: 'buses',
     buses_models: 'buses_models',
     buses_model_seats: 'buses_model_seats',

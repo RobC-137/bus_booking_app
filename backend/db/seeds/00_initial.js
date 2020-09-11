@@ -1,5 +1,6 @@
 const orderedTableNames = require('../../src/constants/orderedTableNames');
 const tableNames = require('../../src/constants/tableNames');
+const cities = require('../../src/constants/cities');
 const Knex = require('knex');
 
 /**
@@ -10,12 +11,11 @@ exports.seed = async (knex) => {
   await Promise.all(
     orderedTableNames.map((tableName) => knex(tableName).del())
   )
+  await knex(tableNames.cities).insert(cities.map((cityName) => {
+    return {
+      name: cityName
+    }
+  }))
 
-  const created = await knex(tableNames.stops).insert([
-    { name: 'valparaíso', city: 'valparaíso' },
-    { name: 'pajaritos', city: 'santiago' },
-    { name: 'estación central', city: 'santiago' }
-  ]).returning('*');
 
-  console.log(created);
 };
