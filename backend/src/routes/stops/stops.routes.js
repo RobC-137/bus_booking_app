@@ -2,7 +2,7 @@ const router = require('express').Router();
 const queries = require('./stops.queries');
 const utils = require('../../utils');
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
         const stops = await queries.getAllStops();
         res.send(stops);

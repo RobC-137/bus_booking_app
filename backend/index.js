@@ -17,8 +17,10 @@ Model.knex(knex(KnexConfig.development));
 
 //bring routes
 const stops = require('./src/routes/stops/stops.routes');
+const cities = require('./src/routes/cities/cities.routes');
 
 app.use('/api/v1/stops', stops);
+app.use('/api/v1/cities', cities);
 
 app.use((error, req, res, next) => {
     errorHandler(error, res);

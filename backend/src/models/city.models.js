@@ -1,10 +1,10 @@
 const { Model } = require('objection');
 const tableNames = require('../constants/tableNames');
 
-class Stop extends Model {
+class City extends Model {
     static get tableName() {
-        return tableNames.stops;
+        return tableNames.cities;
     }
 }
 
-module.exports = Stop;
+module.exports = City;
