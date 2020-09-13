@@ -1,4 +1,5 @@
 const { Model } = require('objection');
+const cors = require('cors');
 const express = require('express');
 const knex = require('knex');
 const errorHandler = require('./src/errorHandler');
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000
 
 //middlewares
 app.use(express.json());
+app.use(cors());
 
 // Give the knex instance to objection.
 const KnexConfig = require('./knexfile');
