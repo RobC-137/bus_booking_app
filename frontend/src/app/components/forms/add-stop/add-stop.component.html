@@ -1,0 +1,32 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" class="form">
+  <mat-form-field>
+    <input matInput formControlName="name" placeholder="Stop name" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      type="text"
+      placeholder="Pick one"
+      aria-label="Number"
+      matInput
+      formControlName="city"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete
+      autoActiveFirstOption
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+    >
+      <mat-option *ngFor="let city of cities | async" [value]="city">
+        {{ city.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <!-- <input formControlName="id" placeholder="City" />
+  <div *ngIf="myForm.get('id').hasError('required')">
+    Oops, please provide a name!
+  </div> -->
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>
